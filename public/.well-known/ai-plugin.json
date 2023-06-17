@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Kaguya",
+  "name_for_model": "Kaguya",
+  "description_for_human": "Kaguya is an AI-powered coding assistant that supercharges your coding journey.",
+  "description_for_model": "kaguya is your friendly ai assistant that makes coding a breeze! 🍃",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://images.squarespace-cdn.com/content/v1/59518b28cd0f684eae15259e/c8be2bdb-dd07-43ff-a268-db52c39925b0/csdlogo.jpg",
+  "contact_email": "support@example.com",
+  "legal_info_url": "http://www.example.com/legal"
+}

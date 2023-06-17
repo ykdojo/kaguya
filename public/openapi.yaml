@@ -1,0 +1,431 @@
+openapi: 3.0.1
+info:
+  title: Kaguya
+  description: A project that you can edit just by talking to ChatGPT.
+  version: v1
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/executeCommand:
+    post:
+      operationId: executeCommand
+      summary: Execute a shell command - from git commands to running code, listing files, or anything else that's possible to do through a shell command.
+      description: This endpoint allows users to execute arbitrary shell commands. Note, 'git push' is not available through this endpoint due to authentication requirements.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                command:
+                  type: string
+                  description: The shell command to execute.
+              required:
+                - command
+      responses:
+        "200":
+          description: Command executed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A message indicating the success of the command execution.
+                  output:
+                    type: string
+                    description: The output of the executed command.
+        "400":
+          description: Bad request (e.g., missing command parameter).
+        "500":
+          description: Internal server error (e.g., error executing command).
+  /api/listFilesInDirectory:
+    get:
+      parameters:
+        - in: query
+          name: directoryPath
+          schema:
+            type: string
+          description: The path of the directory to list files and directories in.
+      operationId: listFilesInDirectory
+      summary: List files and directories in the specified directory. Files and directories specified in .gitignore files will be ignored. To specify the root directory, use ".".
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  files:
+                    type: array
+                    items:
+                      type: string
+                    description: An array of file paths
+        "405":
+          description: Method Not Allowed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+  /api/readFile:
+    get:
+      operationId: readFile
+      summary: Read the content of a file in the user's directory.
+      parameters:
+        - in: query
+          name: filePath
+          schema:
+            type: string
+          required: true
+          description: The path of the file to read
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: string
+                    description: The content of the file
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+  /api/update:
+    post:
+      operationId: update
+      summary: >-
+        Update a file in the user's directory by performing a search-and-replace operation. This operation only updates the first occurence of the matched string. Confirm before you proceed. Use this before updateWholeFile.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePath:
+                  type: string
+                  description: The path of the file to update
+                searchString:
+                  type: string
+                  description: The string to search for in the file
+                replacementString:
+                  type: string
+                  description: The string to replace the search string with
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A success message or an error message, if applicable
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: An error message
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: An error message
+                  error:
+                    type: string
+                    description: A detailed error message
+  /api/updateWholeFile:
+    post:
+      operationId: updateWholeFile
+      summary: >-
+        Replace the entire content of a file in the user's directory. Confirm
+        before you proceed. Consider using the update endpoint for
+        search-and-replace operations.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePath:
+                  type: string
+                  description: The path of the file to modify
+                content:
+                  type: string
+                  description: The new content of the file
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A success message or an error message, if applicable
+  /api/createFile:
+    post:
+      operationId: createFile
+      summary: Create a new file
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePath:
+                  type: string
+                  description: The path of the file to create
+                content:
+                  type: string
+                  description: The content of the new file
+      responses:
+        "200":
+          description: File created successfully
+        "400":
+          description: Bad request (e.g., missing parameters, invalid file path)
+        "405":
+          description: Method not allowed
+        "409":
+          description: File already exists
+        "500":
+          description: Error creating file
+  /api/deleteFile:
+    post:
+      operationId: deleteFile
+      summary: Delete a file in the user's directory.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePath:
+                  type: string
+                  description: The path of the file to delete
+      responses:
+        "200":
+          description: File deleted successfully
+        "400":
+          description: Bad request (e.g., missing parameters, invalid file path)
+        "404":
+          description: File not found
+        "500":
+          description: Error deleting file
+  /api/renameFile:
+    post:
+      operationId: renameFile
+      summary: Rename a file in the user's directory.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                oldFilePath:
+                  type: string
+                  description: The current path of the file to rename
+                newFilePath:
+                  type: string
+                  description: The new path of the file after renaming
+      responses:
+        "200":
+          description: File renamed successfully
+        "400":
+          description: Bad request (e.g., missing parameters, invalid file paths)
+        "404":
+          description: File not found
+        "409":
+          description: File already exists with the new file path
+        "500":
+          description: Error renaming file
+  /api/appendToFile:
+    post:
+      operationId: appendToFile
+      summary: Append content to the end of an existing file.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePath:
+                  type: string
+                  description: The path of the file to append to
+                contentToAppend:
+                  type: string
+                  description: The content to append to the file
+      responses:
+        "200":
+          description: Content appended successfully
+        "400":
+          description: Bad request (e.g., missing parameters, invalid file path)
+        "500":
+          description: Error appending content to file
+  /api/createDirectory:
+    post:
+      operationId: createDirectory
+      summary: Create a new directory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                directoryPath:
+                  type: string
+                  description: The path of the directory to create
+      responses:
+        "200":
+          description: Directory created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "400":
+          description: Bad request (e.g., missing directory path)
+        "500":
+          description: Failed to create directory
+  /api/deleteDirectory:
+    post:
+      operationId: deleteDirectory
+      summary: Delete a directory and its contents.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                directoryPath:
+                  type: string
+                  description: The path of the directory to delete.
+      responses:
+        "200":
+          description: Directory deleted successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A success message
+        "400":
+          description: Bad Request (e.g., missing directory path).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+        "500":
+          description: Internal Server Error (e.g., failed to delete directory).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message
+  /api/readMultipleFiles:
+    post:
+      operationId: readMultipleFiles
+      summary: Read the content of multiple files
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filePaths:
+                  type: array
+                  items:
+                    type: string
+                  description: An array of file paths to read
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fileContents:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        filePath:
+                          type: string
+                        content:
+                          type: string
+        '400':
+          description: Bad request (e.g., invalid file path or filePaths not an array)
+        '404':
+          description: File not found
+        '405':
+          description: Method not allowed
+        '500':
+          description: Internal server error
