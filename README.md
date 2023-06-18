@@ -31,8 +31,4 @@ After running the script, you can interact with Kaguya through ChatGPT using the
 
 ## More About Kaguya
 
-If you're interested in giving Kaguya a try, please drop your GitHub profile and I'll send you an invite to my private repository.
-
-You can also check out a demo of Kaguya in action on Twitter: [Demo Video](https://twitter.com/ykdojo/status/1645846044843077635)
-
-In the demo, you'll see how Kaguya can edit files, run any bash command, write, run, and debug Python & JS code, and even create & run Git commands. It's an exhilarating experience that brings a new level of interactivity to coding with ChatGPT.
+You can check out a demo of Kaguya in action on Twitter: [Demo Video](https://twitter.com/ykdojo/status/1645846044843077635)
