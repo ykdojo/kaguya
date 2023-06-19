@@ -32,3 +32,5 @@ After running the script, you can interact with Kaguya through ChatGPT using the
 ## More About Kaguya
 
 You can check out a demo of Kaguya in action on Twitter: [Demo Video](https://twitter.com/ykdojo/status/1645846044843077635)
+
+You can check out a second demo of Kaguya in action on Twitter: [Second Demo Video](https://twitter.com/ykdojo/status/1670848611532562433)
