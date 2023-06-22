@@ -130,7 +130,7 @@ paths:
     post:
       operationId: update
       summary: >-
-        Update a file in the user's directory by performing a search-and-replace operation. This operation only updates the first occurence of the matched string. Confirm before you proceed. Use this before updateWholeFile.
+        Update a file in the user's directory by performing a search-and-replace operation. This operation only updates the first occurrence of the matched string. Confirm before you proceed. Use this before updateWholeFile.
       requestBody:
         required: true
         content:
