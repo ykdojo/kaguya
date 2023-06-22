@@ -4,6 +4,12 @@ FROM node:14-bullseye-slim
 # Set the working directory
 WORKDIR /kaguya
 
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install Node.js dependencies
+RUN npm install
+
 # Install Python, Git, Curl, and build dependencies
 RUN apt-get update && \
     apt-get install -y python3 python3-pip git curl build-essential gfortran && \
