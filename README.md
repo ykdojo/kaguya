@@ -38,3 +38,9 @@ You can check out a second demo of Kaguya in action on Twitter: [Second Demo Vid
 ## Discord
 
 Join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
+
+## License 
+
+This project is licensed under the terms of the MIT license ©2023.
+
+For the full license text, please see the [LICENSE](./LICENSE) file.
