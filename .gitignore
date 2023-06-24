@@ -45,3 +45,6 @@ __pycache__/
 FILES/*
 .gitmodules
 !FILES/sample.txt
+
+# Ignore .last_build_timestamp because it stores the timestamp of the last Docker build and should not be version controlled.
+.last_build_timestamp
