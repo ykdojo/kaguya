@@ -10,7 +10,7 @@ TIMESTAMP_FILE=".last_build_timestamp"
 MOD_TIMESTAMP=$(date -r Dockerfile +%s)
 
 # Check if the image already exists and if the timestamp has changed
-if [ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ] || [ ! -f "$TIMESTAMP_FILE" ] || [ "$MOD_TIMESTAMP" != "$(cat $TIMESTAMP_FILE)" ]; then
+if [ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ] || [ ! -f "$TIMESTAMP_FILE" ] || [ "$MOD_TIMESTAMP" -gt "$(cat $TIMESTAMP_FILE)" ]; then
   echo "Building the image..."
   # Build the Docker image
   docker build -t $IMAGE_NAME .
