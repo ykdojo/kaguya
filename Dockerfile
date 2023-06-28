@@ -88,8 +88,10 @@ RUN useradd -m appuser && chown -R appuser /kaguya
 USER appuser
 
 # Set Git identity
-RUN git config --global user.email "yksu@csdojo.io"
-RUN git config --global user.name "ykdojo"
+ARG GIT_NAME
+ARG GIT_EMAIL
+RUN git config --global user.name "$GIT_NAME"
+RUN git config --global user.email "$GIT_EMAIL"
 # Add an exception for the /app directory to resolve Git ownership issues
 RUN git config --global --add safe.directory /kaguya
 
