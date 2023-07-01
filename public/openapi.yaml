@@ -149,7 +149,7 @@ paths:
                   description: The string to replace the search string with
                 replaceAll:
                   type: boolean
-                  description: Whether to replace all occurrences of the search string. Optional.y
+                  description: Whether to replace all occurrences of the search string. False by default
       responses:
         "200":
           description: OK
