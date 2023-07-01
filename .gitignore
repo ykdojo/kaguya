@@ -49,4 +49,5 @@ FILES/*
 # Ignore .last_build_timestamp because it stores the timestamp of the last Docker build and should not be version controlled.
 .last_build_timestamp
 
+# Ignore doc directory,because it is test doc.
 /doc
