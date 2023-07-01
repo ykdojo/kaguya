@@ -4,7 +4,7 @@ info:
   description: A project that you can edit just by talking to ChatGPT.
   version: v1
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:9999
 paths:
   /api/executeCommand:
     post:

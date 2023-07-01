@@ -25,4 +25,4 @@ else
 fi
 
 # Run the Docker container with the --rm flag (automatically remove container on exit)
-docker run --shm-size=2g --rm -p 3000:3000 -v $(pwd):/kaguya -v /kaguya/node_modules $IMAGE_NAME
+docker run --shm-size=2g --rm -p 9999:3000 -v $(pwd):/kaguya -v /kaguya/node_modules $IMAGE_NAME
