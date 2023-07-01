@@ -27,7 +27,7 @@ You can run the project using Docker. Simply execute the `docker.sh` script:
 docker.sh
 ```
 
-After running the script, you can interact with Kaguya through ChatGPT using the localhost port.
+After running the script, you can interact with Kaguya through ChatGPT using the localhost port 3000.
 
 ## More About Kaguya
 
