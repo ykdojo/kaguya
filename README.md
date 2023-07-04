@@ -2,6 +2,18 @@
 
 Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT.
 
+## More About Kaguya
+
+Check out the first demo video of Kaguya: 
+
+https://github.com/pushkaraj2007/kaguya/assets/107422421/3000d44a-9c89-4c0f-99bf-8df131aa71ee
+
+Check out the second demo video of Kaguya:
+
+https://github.com/pushkaraj2007/kaguya/assets/107422421/6b180222-6ac5-4d42-9b40-7d48fd37f961
+
+You can check out a second demo of Kaguya in action on Twitter: [Second Demo Video](https://twitter.com/ykdojo/status/1670848611532562433)
+
 ## API Endpoints
 
 The project provides several API endpoints that allow you to interact with the file system. The API is described in the `openapi.yaml` file. Here is a brief overview:
@@ -28,12 +40,6 @@ docker.sh
 ```
 
 After running the script, you can interact with Kaguya through ChatGPT using the localhost port 3000.
-
-## More About Kaguya
-
-You can check out a demo of Kaguya in action on Twitter: [Demo Video](https://twitter.com/ykdojo/status/1645846044843077635)
-
-You can check out a second demo of Kaguya in action on Twitter: [Second Demo Video](https://twitter.com/ykdojo/status/1670848611532562433)
 
 ## Discord
 
