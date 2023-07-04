@@ -12,8 +12,6 @@ Check out the second demo video of Kaguya:
 
 https://github.com/pushkaraj2007/kaguya/assets/107422421/6b180222-6ac5-4d42-9b40-7d48fd37f961
 
-You can check out a second demo of Kaguya in action on Twitter: [Second Demo Video](https://twitter.com/ykdojo/status/1670848611532562433)
-
 ## API Endpoints
 
 The project provides several API endpoints that allow you to interact with the file system. The API is described in the `openapi.yaml` file. Here is a brief overview:
