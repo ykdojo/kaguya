@@ -37,6 +37,15 @@ docker.sh
 
 After running the script, you can interact with Kaguya through ChatGPT using the localhost port 3000.
 
+## Tips
+
+- Best to keep each file under 100 lines of code, particularly for writing
+- Writing more than ~80 lines of code at once is not recommended. It's slow and it might not even be able to finish the task.
+- You can have it read more code though. However, reading more than 500-600 lines of code at once is not recommended.
+- If the target file you want to edit is long, you may want to explicitly ask it to use search and replace.
+- It may not get the intention of your instructions right away. It's meant to be a conversational tool.
+- If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
+
 ## Discord
 
 Join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
