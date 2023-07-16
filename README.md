@@ -1,6 +1,17 @@
 # Kaguya
 
-Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT.
+Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT. To interact with Kaguya through ChatGPT you need a ChatGPT Plus Subscription for GPT-4, plugins, and OpenAI access to plugin devtools by getting on their waitlist [here.](https://openai.com/waitlist/plugins) If you are unable to do this, we are working on a solution and will release instructions in near future.  
+
+## Getting Started Guide 0 2 Hero
+
+For help, ask questions on [Discord.](https://discord.com/channels/1007344194622324807/1120722773879300257)
+For open-source collaboration, participate on [Github](https://github.com/ykdojo/kaguya)
+
+1) Gain access to OpenAI's plugin devtools for ChatGPT [here.](https://openai.com/waitlist/plugins) 
+2) Install Docker
+3) Execute ```docker.sh``` script
+4) Setup localhost port 3000
+5) Interact with Kaguya through ChatGPT
 
 ## Demo
 
@@ -27,16 +38,6 @@ The project provides several API endpoints that allow you to interact with the f
 - `POST /api/deleteDirectory`: Delete a directory and its contents.
 - `POST /api/readMultipleFiles`: Read the content of multiple files.
 
-## Running the Project
-
-You can run the project using Docker. Simply execute the `docker.sh` script:
-
-```bash
-docker.sh
-```
-
-After running the script, you can interact with Kaguya through ChatGPT using the localhost port 3000.
-
 ## Tips
 
 - Best to keep each file under 100 lines of code, particularly for writing
@@ -45,10 +46,6 @@ After running the script, you can interact with Kaguya through ChatGPT using the
 - If the target file you want to edit is long, you may want to explicitly ask it to use search and replace.
 - It may not get the intention of your instructions right away. It's meant to be a conversational tool.
 - If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
-
-## Discord
-
-Join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
 
 ## License 
 
