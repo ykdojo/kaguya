@@ -38,6 +38,7 @@ The project provides several API endpoints that allow you to interact with the f
 
 ## Tips
 
+- If listFilesInDirectory tries to show too many files, a good solution would be to add a git repo or submodule, in which files in .gitignore are ignored.
 - Best to keep each file under 100 lines of code, particularly for writing
 - Writing more than ~80 lines of code at once is not recommended. It's slow and it might not even be able to finish the task.
 - You can have it read more code though. However, reading more than 500-600 lines of code at once is not recommended.
