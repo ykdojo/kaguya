@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { countTokens } from "../../utils/tiktokenUtil";
 
 export default function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "https://chat.openai.com");
@@ -26,8 +27,10 @@ export default function handler(req, res) {
     // Initialize an array to store the file contents
     const fileContents = [];
 
+    // Initialize a variable to store the total number of tokens
+    let totalTokens = 0;
+
     // Loop through each file path and read its content
-    let totalCharLength = 0;
     for (const filePath of filePaths) {
       // Resolve the file path relative to the project root
       const resolvedPath = path.resolve(process.cwd(), filePath);
@@ -42,19 +45,24 @@ export default function handler(req, res) {
         fs.accessSync(resolvedPath, fs.constants.F_OK);
         // Read the content of the file
         const content = fs.readFileSync(resolvedPath, "utf8");
-        totalCharLength += content.length;
-        if (totalCharLength > 22000) {
+        // Count the number of tokens in the content
+        const tokens = countTokens(content);
+        totalTokens += tokens;
+
+        // Check if the total number of tokens exceeds the limit
+        if (totalTokens > 5500) {
           return res
             .status(200)
             .json({
               warning:
-                "The total character length of the output exceeds 22,000 characters. Only some of the files are shown.",
+                "The total number of tokens exceeds 5500. Only some of the files are shown.",
               fileContents
             });
         }
+
         fileContents.push({ filePath, content });
       } catch (err) {
-        return res.status(404).json({ error: `File not found: ${filePath}. listFiles can be used to locate it.` });
+        return res.status(404).json({ error: `Error: ${err.message}` });
       }
     }
 

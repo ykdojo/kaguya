@@ -16,38 +16,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install FFmpeg
-RUN apt-get update && \
-    apt-get install -y ffmpeg && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install numpy
-RUN pip3 install numpy
-
-# Install the youtube_transcript_api package, python-dotenv, and snowflake-connector-python
-RUN pip3 install youtube_transcript_api python-dotenv snowflake-connector-python
-
-# Install pandas
-RUN pip3 install pandas
-
-# Install yfinance
-RUN pip3 install yfinance
-
-# Install moviepy
-RUN pip3 install moviepy
-
-# Install PyYAML
-RUN pip3 install PyYAML
-
-# Install Selenium
-RUN pip3 install selenium
-
-# Install Beautiful Soup
-RUN pip3 install beautifulsoup4
-
-# Install Requests
-RUN pip3 install requests
+RUN pip3 install numpy pandas python-dotenv yfinance moviepy PyYAML selenium beautifulsoup4 requests html2text tiktoken
 
 # Install Firefox and GeckoDriver (WebDriver for Firefox)
 RUN apt-get update && \
@@ -60,13 +29,6 @@ RUN apt-get update && \
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-# Install the latest version of youtube-dl
-RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
-    chmod a+rx /usr/local/bin/yt-dlp
-
-# Install html2text
-RUN pip3 install html2text
-
 # Install Chrome and ChromeDriver (WebDriver for Chrome)
 RUN apt-get update && \
     apt-get install -y wget unzip && \
@@ -78,8 +40,6 @@ RUN apt-get update && \
     rm chromedriver_linux64.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install tiktoken
 
 # Create a non-root user named 'appuser' and set ownership of the /kaguya directory
 RUN useradd -m appuser && chown -R appuser /kaguya
