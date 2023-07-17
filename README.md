@@ -41,7 +41,7 @@ The project provides several API endpoints that allow you to interact with the f
 - Best to keep each file under 100 lines of code, particularly for writing
 - Writing more than ~80 lines of code at once is not recommended. It's slow and it might not even be able to finish the task.
 - You can have it read more code though. However, reading more than 500-600 lines of code at once is not recommended.
-- If the target file you want to edit is long, you may want to explicitly ask it to use search and replace.
+- If the target file you want to edit is long, you may want to explicitly ask it to use search and replace and NOT updateWholeFile.
 - It may not get the intention of your instructions right away. It's meant to be a conversational tool.
 - If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
 
