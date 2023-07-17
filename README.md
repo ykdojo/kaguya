@@ -1,6 +1,6 @@
 # Kaguya
 
-Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT. To interact with Kaguya through ChatGPT you need a ChatGPT Plus Subscription for GPT-4, plugins, and OpenAI access to plugin devtools by getting on their waitlist [here.](https://openai.com/waitlist/plugins) If you are unable to do this, we are working on a solution and will release instructions in near future.  
+Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT. To interact with Kaguya through ChatGPT, you'll need access to ChatGPT plugin devtools by getting on their waitlist [here.](https://openai.com/waitlist/plugins) If you are unable to do this, we are working on a solution and will release instructions in near future.  
 
 ## Getting Started Guide
 
