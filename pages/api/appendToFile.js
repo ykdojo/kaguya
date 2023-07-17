@@ -19,7 +19,7 @@ export default function handler(req, res) {
       return res.status(400).json({ error: 'File path and content to append are required.' });
     }
     try {
-      const fullPath = path.resolve(process.cwd(), filePath);
+      const fullPath = path.resolve(path.join(process.cwd(), 'FILES'), filePath);
       if (!fs.existsSync(fullPath)) {
         return res.status(400).json({ error: 'File not found. listFiles can be used to verify the file path.' });
       }

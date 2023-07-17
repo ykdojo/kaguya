@@ -21,8 +21,8 @@ export default function handler(req, res) {
     }
 
     // Resolve the file paths relative to the project root
-    const resolvedOldPath = path.resolve(process.cwd(), oldFilePath);
-    const resolvedNewPath = path.resolve(process.cwd(), newFilePath);
+    const resolvedOldPath = path.resolve(process.cwd(), 'FILES', oldFilePath);
+    const resolvedNewPath = path.resolve(process.cwd(), 'FILES', newFilePath);
 
     // Check if the old file exists
     if (!fs.existsSync(resolvedOldPath)) {

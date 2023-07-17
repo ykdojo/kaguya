@@ -23,7 +23,7 @@ export default function handler(req, res) {
     }
 
     // Resolve the file path relative to the project root
-    const resolvedPath = path.resolve(process.cwd(), filePath);
+    const resolvedPath = path.resolve(process.cwd(), 'FILES', filePath);
 
     // Check if the resolved path is outside the project directory
     if (!resolvedPath.startsWith(process.cwd())) {

@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     try {
       // Resolve the file path relative to the project root
-      const fileAbsolutePath = path.resolve(process.cwd(), filePath);
+      const fileAbsolutePath = path.resolve(process.cwd(), 'FILES', filePath);
 
       // Check if the resolved path is outside the project directory
       if (!fileAbsolutePath.startsWith(process.cwd())) {

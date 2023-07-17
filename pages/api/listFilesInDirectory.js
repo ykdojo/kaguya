@@ -98,7 +98,7 @@ export default function handler(req, res) {
 
   if (req.method === "GET") {
     // Get the directory path from the query parameters (default to current directory)
-    const directoryPath = req.query.directoryPath;
+    const directoryPath = path.join(process.cwd(), 'FILES', req.query.directoryPath);
     if (directoryPath === "/") {
       res.status(400).json({
         error:

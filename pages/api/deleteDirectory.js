@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Recursive function to delete a directory and its contents
-function deleteDirectoryRecursively(directoryPath) {
+function deleteDirectoryRecursively(path.join(process.cwd(), 'FILES', directoryPath)) {
   if (fs.existsSync(directoryPath)) {
     fs.readdirSync(directoryPath).forEach((file) => {
       const currentPath = path.join(directoryPath, file);

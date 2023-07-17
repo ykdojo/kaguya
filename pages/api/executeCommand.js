@@ -19,7 +19,7 @@ export default function handler(req, res) {
       return res.status(400).json({ message: 'Command parameter is required.' });
     }
 
-    exec(command, (error, stdout, stderr) => {
+    exec(`cd FILES && ${command}`, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing command: ${error.message}`); // Log error to console
         return res.status(500).json({ message: `Error executing command: ${error.message}` });

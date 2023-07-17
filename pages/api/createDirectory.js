@@ -19,7 +19,7 @@ export default function handler(req, res) {
       if (!directoryPath) {
         return res.status(400).json({ message: 'Directory path is required.' });
       }
-      const fullPath = path.resolve(directoryPath);
+      const fullPath = path.resolve(process.cwd(), 'FILES', directoryPath);
       if (fs.existsSync(fullPath)) {
         return res.status(400).json({ message: 'Directory already exists.' });
       }
