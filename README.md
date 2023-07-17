@@ -24,7 +24,7 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 The project provides several API endpoints that allow you to interact with the file system. The API is described in the `openapi.yaml` file. Here is a brief overview:
 
 - `POST /api/executeCommand`: Execute a shell command.
-- `GET /api/listFilesInDirectory`: List files and directories in the specified directory.
+- `GET /api/listFilesInDirectory`: List files and directories in the specified directory. Defaults to FILES.
 - `GET /api/readFile`: Read the content of a file in the user's directory.
 - `POST /api/update`: Update a file in the user's directory by performing a search-and-replace operation.
 - `POST /api/updateWholeFile`: Replace the entire content of a file in the user's directory.
