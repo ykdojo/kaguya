@@ -6,16 +6,27 @@ const ignore = require("ignore");
 function getSubmodulePaths(targetDir) {
   const submodulePaths = new Set();
   const gitmodulesPath = path.join(targetDir, ".gitmodules");
-  if (fs.existsSync(gitmodulesPath)) {
-    const gitmodulesContent = fs.readFileSync(gitmodulesPath, "utf8");
-    const submoduleLines = gitmodulesContent.split("\n");
-    submoduleLines.forEach((line) => {
-      const match = line.match(/^[\s]*path[\s]*=[\s]*(.+)$/);
-      if (match) {
-        submodulePaths.add(match[1]);
-      }
-    });
+  const kaguyaGitmodulesPath = path.join("/kaguya", ".gitmodules"); // Path to .gitmodules in /kaguya
+
+  // Function to read a .gitmodules file and add paths to submodulePaths
+  function readGitmodules(filePath, prependPath) {
+    if (fs.existsSync(filePath)) {
+      const gitmodulesContent = fs.readFileSync(filePath, "utf8");
+      const submoduleLines = gitmodulesContent.split("\n");
+      submoduleLines.forEach((line) => {
+        const match = line.match(/^[\s]*path[\s]*=[\s]*(.+)$/);
+        if (match) {
+          // Prepend the path with prependPath
+          submodulePaths.add(path.join(prependPath, match[1]));
+        }
+      });
+    }
   }
+
+  // Read .gitmodules in targetDir and /kaguya
+  readGitmodules(gitmodulesPath, targetDir);
+  readGitmodules(kaguyaGitmodulesPath, "/kaguya");
+
   return submodulePaths;
 }
 
@@ -54,7 +65,7 @@ function listFilesInDirectory(
 
     // Check if the file or directory should be ignored
     const isDirectory = fs.statSync(filePath).isDirectory();
-    if (ig.ignores(isDirectory ? relativePath + "/" : relativePath)) {
+    if (ig.ignores(isDirectory ? 'kaguya/' + relativePath + "/" : 'kaguya/' + relativePath)) {
       return;
     }
 

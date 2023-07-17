@@ -50,7 +50,7 @@ paths:
             type: string
           description: The path of the directory to list files and directories in.
       operationId: listFilesInDirectory
-      summary: List files and directories in the specified directory. Files and directories specified in .gitignore files will be ignored. To specify the root directory, use ".".
+      summary: List files and directories in the specified directory. Files and directories specified in .gitignore files will be ignored. To use the FILES directory, use ".".
       responses:
         "200":
           description: OK
