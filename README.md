@@ -4,9 +4,6 @@ Kaguya is a ChatGPT plugin that allows you to load and edit your local files in 
 
 ## Getting Started Guide
 
-For help, ask questions on [Discord.](https://discord.com/channels/1007344194622324807/1120722773879300257)
-For open-source collaboration, participate on [Github](https://github.com/ykdojo/kaguya)
-
 1. Clone this repo to your local environment
 1. Gain access to OpenAI's plugin devtools for ChatGPT [here](https://openai.com/waitlist/plugins)
 1. Install Docker
