@@ -2,16 +2,17 @@
 
 Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT. To interact with Kaguya through ChatGPT you need a ChatGPT Plus Subscription for GPT-4, plugins, and OpenAI access to plugin devtools by getting on their waitlist [here.](https://openai.com/waitlist/plugins) If you are unable to do this, we are working on a solution and will release instructions in near future.  
 
-## Getting Started Guide 0 2 Hero
+## Getting Started Guide
 
 For help, ask questions on [Discord.](https://discord.com/channels/1007344194622324807/1120722773879300257)
 For open-source collaboration, participate on [Github](https://github.com/ykdojo/kaguya)
 
-1) Gain access to OpenAI's plugin devtools for ChatGPT [here.](https://openai.com/waitlist/plugins) 
-2) Install Docker
-3) Execute ```docker.sh``` script
-4) Setup localhost port 3000
-5) Interact with Kaguya through ChatGPT
+1. Clone this repo to your local environment
+1. Gain access to OpenAI's plugin devtools for ChatGPT [here](https://openai.com/waitlist/plugins)
+1. Install Docker
+1. Execute ```docker.sh``` script
+1. Setup localhost port 3000
+1. Interact with Kaguya through ChatGPT
 
 ## Demo
 
