@@ -2,6 +2,14 @@
 
 Kaguya is a ChatGPT plugin that allows you to load and edit your local files in a controlled way, as well as run any Python, JavaScript, and bash script. This makes it a powerful tool for developers, enabling them to interact with their file system and run scripts directly from ChatGPT. To interact with Kaguya through ChatGPT, you'll need access to ChatGPT plugin devtools by getting on their waitlist [here](https://openai.com/waitlist/plugins). In case this approach doesn't work for you, we may be able to come up with a more open approach at some point in the future.
 
+## Demo
+
+Here are the demo videos of Kaguya: 
+
+https://github.com/ykdojo/kaguya/assets/107422421/c580a6f6-5f08-43fd-ac8b-c12a319e1534
+
+https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d43797ddaa
+
 ## Getting Started Guide
 
 1. Clone this repo to your local environment
@@ -10,14 +18,6 @@ Kaguya is a ChatGPT plugin that allows you to load and edit your local files in 
 1. Execute ```docker.sh``` script
 1. Setup localhost port 3000
 1. Interact with Kaguya through ChatGPT
-
-## Demo
-
-Here are the demo videos of Kaguya: 
-
-https://github.com/ykdojo/kaguya/assets/107422421/c580a6f6-5f08-43fd-ac8b-c12a319e1534
-
-https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d43797ddaa
 
 ## API Endpoints
 
@@ -44,6 +44,10 @@ The project provides several API endpoints that allow you to interact with the f
 - If the target file you want to edit is long, you may want to explicitly ask it to use search and replace.
 - It may not get the intention of your instructions right away. It's meant to be a conversational tool.
 - If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
+
+## Discord
+
+Join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
 
 ## License 
 
