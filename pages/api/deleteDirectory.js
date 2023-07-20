@@ -2,17 +2,24 @@ import fs from 'fs';
 import path from 'path';
 
 // Recursive function to delete a directory and its contents
-function deleteDirectoryRecursively(path.join(process.cwd(), 'FILES', directoryPath)) {
-  if (fs.existsSync(directoryPath)) {
-    fs.readdirSync(directoryPath).forEach((file) => {
-      const currentPath = path.join(directoryPath, file);
-      if (fs.lstatSync(currentPath).isDirectory()) {
-        deleteDirectoryRecursively(currentPath);
+function deleteDirectoryRecursively(directoryPath, isInitialCall = true) {
+  const fullPath = isInitialCall ? path.join(process.cwd(), 'FILES', directoryPath) : directoryPath;
+  if (fs.existsSync(fullPath)) {
+    console.log(`Deleting contents of directory: ${fullPath}`);
+    fs.readdirSync(fullPath).forEach((file) => {
+      const currentPath = path.join(fullPath, file);
+      const isDirectory = fs.lstatSync(currentPath).isDirectory();
+      console.log(`Is ${currentPath} a directory? ${isDirectory}`);
+      if (isDirectory) {
+        console.log(`Deleting directory: ${currentPath}`);
+        deleteDirectoryRecursively(currentPath, false);
       } else {
+        console.log(`Deleting file: ${currentPath}`);
         fs.unlinkSync(currentPath);
       }
     });
-    fs.rmdirSync(directoryPath);
+    console.log(`Deleting directory: ${fullPath}`);
+    fs.rmdirSync(fullPath);
   }
 }
 
@@ -32,7 +39,7 @@ export default function handler(req, res) {
   if (req.method === 'POST') {
     const { directoryPath } = req.body;
     try {
-      deleteDirectoryRecursively(directoryPath);
+      deleteDirectoryRecursively(directoryPath, true);
       res.status(200).json({ message: 'Directory deleted successfully' });
     } catch (error) {
       res.status(500).json({ error: 'Failed to delete directory', details: error.message });
