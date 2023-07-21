@@ -16,10 +16,10 @@ export default function handler(req, res) {
   if (req.method === 'POST') {
     const { filePath, content } = req.body;
 
-    if (!filePath || !content) {
+    if (!filePath) {
       return res
         .status(400)
-        .json({ error: 'File path and content are required' });
+        .json({ error: 'File path is required' });
     }
 
     // Resolve the file path relative to the project root
