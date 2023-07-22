@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
 
     // Extract the parameters from the request body
-    const { filePath, searchString, replacementString, replaceAll } = req.body;
+    const { filePath, searchString, replacementString } = req.body;
 
     // Ensure all required parameters are provided
     if (!filePath || searchString === undefined || replacementString === undefined) {
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       }
 
       // Perform the search and replace operation
-      const updatedContent = replaceAll ? fileContent.split(searchString).join(replacementString) : fileContent.replace(searchString, replacementString);
+      const updatedContent = fileContent.replace(searchString, replacementString);
 
       // Write the updated content back to the file
       fs.writeFileSync(fileAbsolutePath, updatedContent);
