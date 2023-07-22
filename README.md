@@ -27,6 +27,7 @@ The project provides several API endpoints that allow you to interact with the f
 - `GET /api/listFilesInDirectory`: List files and directories in the specified directory. Defaults to FILES.
 - `GET /api/readFile`: Read the content of a file in the user's directory.
 - `POST /api/update`: Update a file in the user's directory by performing a search-and-replace operation.
+- `POST /api/updateAll`: Update a file in the user's directory by performing a search-and-replace operation (all occurrences).
 - `POST /api/updateWholeFile`: Replace the entire content of a file in the user's directory.
 - `POST /api/createFile`: Create a new file.
 - `POST /api/deleteFile`: Delete a file in the user's directory.
