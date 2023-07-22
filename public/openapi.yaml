@@ -429,7 +429,6 @@ paths:
           description: Method not allowed
         '500':
           description: Internal server error
-
   /api/updateAll:
     post:
       operationId: updateAll
