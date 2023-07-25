@@ -14,7 +14,7 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 
 1. Clone this repo to your local environment
 1. Gain access to OpenAI's plugin devtools for ChatGPT [here](https://openai.com/waitlist/plugins)
-1. Install Docker
+1. Install Docker and run it locally
 1. Execute ```docker.sh``` script
 1. Setup localhost port 3000
 1. Interact with Kaguya through ChatGPT
