@@ -1,0 +1,12 @@
+@media (prefers-color-scheme: dark) {
+  .swagger-ui * {
+    color: #eee !important;
+    background-color: #1a1a1a !important;
+  }
+  .swagger-ui .scheme-container {
+    background-color: #232323 !important;
+  }
+  .swagger-ui .scheme-container * {
+    background-color: #232323 !important;
+  }
+}

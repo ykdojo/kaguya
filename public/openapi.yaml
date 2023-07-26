@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Kaguya
-  description: A project that you can edit just by talking to ChatGPT.
+  description: 'Kaguya: Interact with your file system via ChatGPT.'
   version: v1
 servers:
   - url: http://localhost:3000
