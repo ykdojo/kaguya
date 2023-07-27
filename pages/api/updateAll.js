@@ -50,8 +50,7 @@ export default async function handler(req, res) {
       }
 
       // Perform the search and replace operation
-      const regex = new RegExp(searchString, 'g');
-      const updatedContent = fileContent.replace(regex, replacementString);
+      const updatedContent = fileContent.split(searchString).join(replacementString);
 
       // Write the updated content back to the file
       fs.writeFileSync(fileAbsolutePath, updatedContent);
