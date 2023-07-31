@@ -17,8 +17,8 @@ export default function handler(req, res) {
     return;
   }
 
-  if (req.method === "POST") {
-    const { filePaths } = req.body;
+  if (req.method === "GET") {
+    const { filePaths } = req.query;
 
     if (!Array.isArray(filePaths)) {
       return res.status(400).json({ error: "filePaths must be an array" });
