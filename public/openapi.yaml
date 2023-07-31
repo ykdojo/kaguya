@@ -389,21 +389,18 @@ paths:
                     type: string
                     description: An error message
   /api/readMultipleFiles:
-    post:
+    get:
       operationId: readMultipleFiles
       summary: Read the content of multiple files
-      requestBody:
+      parameters:
+      - in: query
+        name: filePaths
+        schema:
+          type: array
+          items:
+            type: string
+        description: An array of file paths to read
         required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                filePaths:
-                  type: array
-                  items:
-                    type: string
-                  description: An array of file paths to read
       responses:
         '200':
           description: Successful operation
