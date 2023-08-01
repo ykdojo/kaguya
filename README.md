@@ -18,6 +18,8 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 1. Execute ```docker.sh``` script
 1. Setup localhost port 3000
 1. Interact with Kaguya through ChatGPT
+1. If you want Kaguya to be able to interact with your files, put them in the FILES folder.
+1. Note: Kaguya won't have access to files outside of its own directory.
 
 ## API Endpoints
 
