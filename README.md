@@ -49,4 +49,4 @@ The project provides several API endpoints that allow you to interact with the f
 
 ## Discord
 
-Join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
+Feel free to join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
