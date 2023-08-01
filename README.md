@@ -4,7 +4,7 @@ Kaguya is a ChatGPT plugin that allows you to load and edit your local files in 
 
 ## Demo
 
-Here are the demo videos of Kaguya: 
+Here are a few demo videos of Kaguya: 
 
 https://github.com/ykdojo/kaguya/assets/107422421/c580a6f6-5f08-43fd-ac8b-c12a319e1534
 
