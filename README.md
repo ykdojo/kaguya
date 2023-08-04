@@ -21,6 +21,12 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 1. If you want Kaguya to be able to interact with your files, put them in the FILES folder.
 1. Note: Kaguya won't have access to files outside of its own directory.
 
+## Recommended Custom Instructions
+
+1. When editing a file of 50+ lines with Kaguya, use search and replace, not ```updateWholeFile```. Confirm with me before editing a file.
+1. When you have output from Kaguya, there's no need to repeat everything from there. Instead, you can summarize it concisely.
+1. When you want to use ```executeCommand``` in a subdirectory, make sure to ```cd``` there first every time.
+
 ## API Endpoints
 
 The project provides several API endpoints that allow you to interact with the file system within the Kaguya directory. The API is described in the `openapi.yaml` file. Here is a brief overview:
