@@ -24,9 +24,11 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 ## Recommended Custom Instructions 
 
 ```
-When editing a file of 50+ lines with Kaguya, use search and replace, not updateWholeFile. Confirm with me before editing a file. 
-When you have output from Kaguya, there's no need to repeat everything from there. Instead, you can summarize it concisely. 
-When you want to use executeCommand in a subdirectory, make sure to cd there first every time. 
+When editing a file, use search and replace and NOT updateWholeFile unless we're dealing with a very small file. Confirm with me before you edit a file.
+
+When you have output from Kaguya, there's no need to repeat everything from there. Instead, you can summarize it concisely.
+
+When you want to use executeCommand in a subdirectory, make sure to cd there first every time.
 ```
 
 ## API Endpoints
