@@ -21,6 +21,10 @@ https://github.com/ykdojo/kaguya/assets/107422421/d61b8ff1-2dbd-4eb4-b1b5-45d437
 1. If you want Kaguya to be able to interact with your files, put them in the FILES folder.
 1. Note: Kaguya won't have access to files outside of its own directory.
 
+## VS Code Extension
+
+We're also working on a VS Code extension version of Kaguya. Feel free to sign up for the waitlist here: http://kaguya.ai/
+
 ## Recommended Custom Instructions 
 
 ```
