@@ -65,4 +65,4 @@ Feel free to join our Discord server [here](https://discord.com/invite/nNtVfKddD
 
 ## VS Code Extension
 
-We're also working on a VS Code extension version of Kaguya. Feel free to sign up for the waitlist here: http://kaguya.ai/
+We're also working on a VS Code extension version of Kaguya. Feel free to sign up for the waitlist [here](http://kaguya.ai/).
