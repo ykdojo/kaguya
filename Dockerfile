@@ -16,6 +16,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && \
+    apt-get install -y ffmpeg && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install numpy pandas python-dotenv yfinance moviepy PyYAML selenium beautifulsoup4 requests html2text tiktoken
 
 # Install Firefox and GeckoDriver (WebDriver for Firefox)
