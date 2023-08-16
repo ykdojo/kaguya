@@ -1,5 +1,13 @@
 #!/bin/sh
 
+PORT=3000
+
+# Check if the port is already in use
+if lsof -i :$PORT > /dev/null; then
+    echo "Port $PORT is already in use."
+    exit 1
+fi
+
 # Get Git user name and email from host machine
 GIT_NAME=$(git config --get user.name)
 GIT_EMAIL=$(git config --get user.email)
