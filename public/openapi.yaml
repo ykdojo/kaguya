@@ -4,7 +4,7 @@ info:
   description: 'Kaguya: Interact with your file system via ChatGPT.'
   version: v1
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:9999
 paths:
   /api/executeCommand:
     post:

@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:3000/openapi.yaml",
+    "url": "http://localhost:9999/openapi.yaml",
     "is_user_authenticated": false
   },
   "logo_url": "https://images.squarespace-cdn.com/content/v1/59518b28cd0f684eae15259e/c8be2bdb-dd07-43ff-a268-db52c39925b0/csdlogo.jpg",
