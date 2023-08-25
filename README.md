@@ -41,6 +41,10 @@ When you want to use executeCommand in a subdirectory, make sure to cd there fir
 - It may not get the intention of your instructions right away. It's meant to be a conversational tool.
 - If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
 
+## API Endpoints
+
+View API endpoints that allow you to interact with the file system within the Kaguya directory [here](pages/apiEndpoints.md).  
+
 ## Discord
 
 Feel free to join our Discord server [here](https://discord.com/invite/nNtVfKddDD).
