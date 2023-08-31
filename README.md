@@ -31,24 +31,6 @@ When you have output from Kaguya, there's no need to repeat everything from ther
 When you want to use executeCommand in a subdirectory, make sure to cd there first every time.
 ```
 
-## API Endpoints
-
-The project provides several API endpoints that allow you to interact with the file system within the Kaguya directory. The API is described in the `openapi.yaml` file. Here is a brief overview:
-
-- `GET /api/listFilesInDirectory`: List files and directories in the specified directory. Defaults to FILES.
-- `GET /api/readFile`: Read the content of a file in the user's directory.
-- `GET /api/readMultipleFiles`: Read the content of multiple files.
-- `POST /api/update`: Update a file in the user's directory by performing a search-and-replace operation.
-- `POST /api/updateAll`: Update a file in the user's directory by performing a search-and-replace operation (all occurrences).
-- `POST /api/updateWholeFile`: Replace the entire content of a file in the user's directory.
-- `POST /api/appendToFile`: Append content to the end of an existing file.
-- `POST /api/createFile`: Create a new file.
-- `POST /api/deleteFile`: Delete a file in the user's directory.
-- `POST /api/renameFile`: Rename a file in the user's directory.
-- `POST /api/createDirectory`: Create a new directory.
-- `POST /api/deleteDirectory`: Delete a directory and its contents.
-- `POST /api/executeCommand`: Execute a shell command.
-
 ## Tips
 
 - If listFilesInDirectory tries to show too many files, a good solution would be to add a git repo or submodule, in which files in .gitignore are ignored.
@@ -58,6 +40,10 @@ The project provides several API endpoints that allow you to interact with the f
 - If the target file you want to edit is long, you may want to explicitly ask it to use search and replace and NOT updateWholeFile.
 - It may not get the intention of your instructions right away. It's meant to be a conversational tool.
 - If the assistant starts hallucinating, it may be helpful to start a new conversation or limit the length of each file being loaded.
+
+## API Endpoints
+
+View [API endpoints](https://github.com/ThirDecade2020/kaguya/blob/master/pages/apiEndpoints.md) that allow you to interact with the [FILES directory](https://github.com/ThirDecade2020/kaguya/tree/master/FILES) by default.
 
 ## Discord
 
