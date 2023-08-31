@@ -43,7 +43,7 @@ When you want to use executeCommand in a subdirectory, make sure to cd there fir
 
 ## API Endpoints
 
-View API endpoints that allow you to interact with the file system within the Kaguya directory [here](pages/apiEndpoints.md).  
+View [API endpoints](https://github.com/ThirDecade2020/kaguya/blob/master/pages/apiEndpoints.md) that allow you to interact with the [FILES directory](https://github.com/ThirDecade2020/kaguya/tree/master/FILES) by default.
 
 ## Discord
 
